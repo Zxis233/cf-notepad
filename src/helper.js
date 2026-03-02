@@ -77,7 +77,7 @@ export async function queryNote(key) {
 }
 
 export function getI18n(request) {
-    const DEFAULT_LANG = 'zh-TW'
+    const DEFAULT_LANG = 'zh-CN'
     const al = request.headers.get('Accept-Language') || DEFAULT_LANG
     const acceptList = al.split(',').map(lang => lang.split(';')[0].trim())
     return acceptList.find(lang => Object.keys(SUPPORTED_LANG).includes(lang)) || DEFAULT_LANG

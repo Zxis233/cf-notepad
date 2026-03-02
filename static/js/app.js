@@ -1,5 +1,5 @@
 
-const DEFAULT_LANG = 'zh-TW'
+const DEFAULT_LANG = 'zh-CN'
 const SUPPORTED_LANG = {
     'en': {
         err: 'Error',
@@ -10,7 +10,7 @@ const SUPPORTED_LANG = {
         pwrs: 'Password removed successfully.',
         cpys: 'Copied!',
     },
-    'zh': {
+    'zh-CN': {
         err: '出错了',
         pepw: '请输入密码',
         pwcnbe: '密码不能为空！',

@@ -530,7 +530,7 @@ textarea#contents {
     pwrs: 'Password removed successfully.',
     cpys: 'Copied!',
         },
-    'zh': {
+    'zh-CN': {
         err: '出错了',
     pepw: '请输入密码',
     pwcnbe: '密码不能为空！',
@@ -552,11 +552,11 @@ textarea#contents {
 
     const getI18n = key => {
         const lang = navigator.language || navigator.userLanguage || DEFAULT_LANG
-    // First try exact match (e.g., zh-TW)
+    // First try exact match (e.g., zh-CN)
     if (SUPPORTED_LANG[lang]) {
             return SUPPORTED_LANG[lang][key]
         }
-    // Then try base language (e.g., zh from zh-TW)
+    // Then try base language (e.g., zh from zh-CN)
     const userLang = lang.split('-')[0]
         const targetLang = Object.keys(SUPPORTED_LANG).find(l => l === userLang) || DEFAULT_LANG
     return SUPPORTED_LANG[targetLang][key]
