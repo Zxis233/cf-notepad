@@ -679,12 +679,12 @@ router.post('/:path', async request => {
 
 router.all('*', (request) => {
     const lang = getI18n(request)
-    returnPage('Page404', { lang, title: '404' })
+    return returnPage('Page404', { lang, title: '404' })
 })
 
 addEventListener('fetch', event => {
     event.request.event = event
-    event.respondWith(router.handle(event.request, event))
+    event.respondWith(router.fetch(event.request, event))
 })
 
 // Cron job: Delete empty pages daily at 9 AM Taiwan time (1 AM UTC)
