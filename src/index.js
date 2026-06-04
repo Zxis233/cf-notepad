@@ -1,6 +1,6 @@
 import dayjs from 'dayjs'
 import { Router } from 'itty-router'
-import Cookies from 'cookie'
+import * as Cookies from 'cookie'
 import jwt from '@tsndr/cloudflare-worker-jwt'
 import { queryNote, MD5, checkAuth, genRandomStr, returnPage, returnJSON, saltPw, getI18n, deleteEmptyPages } from './helper'
 
@@ -679,12 +679,12 @@ router.post('/:path', async request => {
 
 router.all('*', (request) => {
     const lang = getI18n(request)
-    returnPage('Page404', { lang, title: '404' })
+    return returnPage('Page404', { lang, title: '404' })
 })
 
 addEventListener('fetch', event => {
     event.request.event = event
-    event.respondWith(router.handle(event.request, event))
+    event.respondWith(router.fetch(event.request, event))
 })
 
 // Cron job: Delete empty pages daily at 9 AM Taiwan time (1 AM UTC)

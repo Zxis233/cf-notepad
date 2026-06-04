@@ -55,9 +55,9 @@ export async function saltPw(password) {
 
 export async function checkAuth(cookie, path) {
     if (cookie.auth) {
-        const valid = await jwt.verify(cookie.auth, SECRET)
-        if (valid) {
-            const payload = jwt.decode(cookie.auth)
+        const result = await jwt.verify(cookie.auth, SECRET)
+        if (result) {
+            const { payload } = result
             // Backward compatibility: if no role, assume 'edit' (old tokens)
             const role = payload.role || 'edit'
             if (payload.path === path) {

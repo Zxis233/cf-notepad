@@ -984,7 +984,7 @@ export const NeedPasswd = data => HTML({ tips: SUPPORTED_LANG[data.lang].tipEncr
 export const Page404 = data => HTML({ tips: SUPPORTED_LANG[data.lang].tip404, ...data })
 
 export const Admin = ({ lang, notes, error }) => `
-    < !DOCTYPE html >
+    <!DOCTYPE html>
         <html>
             <head>
                 <meta charset="utf-8" />
@@ -1020,7 +1020,7 @@ export const Admin = ({ lang, notes, error }) => `
                     ${notes ? `
     <div style="margin-bottom: 15px; display: flex; gap: 10px; align-items: center;">
         <button id="batch-delete-btn" onclick="batchDelete()" disabled style="padding: 8px 16px; background-color: #dc3545; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 14px; opacity: 0.5;">
-            🗑 刪除選中項
+            🗑 刪除选中項
         </button>
         <form method="POST" style="display: inline; margin: 0;">
             <input type="hidden" name="action" value="delete-empty">
